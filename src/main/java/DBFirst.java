@@ -33,12 +33,18 @@ public class DBFirst {
                     jobject.put("name",  resultSet.getString("name"));
                     jobject.put("location",  resultSet.getString("location"));
                     jobject.put("birthday",  resultSet.getDate("birthday").toString());
-                    jobject.put("pet_name",  resultSet.getString("pet_name"));
-                    jobject.put("type",  resultSet.getString("type"));
-                    jobject.put("pet_birthday",  resultSet.getDate("pet_birthday").toString());
+
+                    JSONArray arrayPet= new JSONArray();
+                    JSONObject jobjectPet= new JSONObject();
+                    jobjectPet.put("pet_name",  resultSet.getString("pet_name"));
+                    jobjectPet.put("type",  resultSet.getString("type"));
+                    jobjectPet.put("pet_birthday",  resultSet.getDate("pet_birthday").toString());
+                    arrayPet.add(jobjectPet);
+                    jobject.put("pet",arrayPet);
                     array.add(jobject);
+
                 }
-                object.put("People_and_animals", array);
+                object.put("people", array);
                 FileWriter fw =new FileWriter("src/main/resources/peopleAndPets.json");
                 fw.write(object.toJSONString());
                 fw.close();
