@@ -1,60 +1,88 @@
 {
-  "People_and_animals": [
+  "people": [
     {
       "birthday": "1986-02-10",
-      "pet_birthday": "2017-05-12",
-      "pet_name": "Vasiliy",
       "name": "Иванов И.И.",
       "location": "г Москва ул Ленина 10",
-      "type": "cat"
+      "pet": [
+        {
+          "pet_birthday": "2017-05-12",
+          "pet_name": "Vasiliy",
+          "type": "cat"
+        }
+      ]
     },
     {
       "birthday": "1984-05-22",
-      "pet_birthday": "2017-05-12",
-      "pet_name": "Vasiliy",
       "name": "Иванова С.К.",
       "location": "г Москва ул Ленина 10",
-      "type": "cat"
+      "pet": [
+        {
+          "pet_birthday": "2017-05-12",
+          "pet_name": "Vasiliy",
+          "type": "cat"
+        }
+      ]
     },
     {
       "birthday": "2007-11-02",
-      "pet_birthday": "2017-05-12",
-      "pet_name": "Vasiliy",
       "name": "Иванова М.И.",
       "location": "г Москва ул Ленина 10",
-      "type": "cat"
+      "pet": [
+        {
+          "pet_birthday": "2017-05-12",
+          "pet_name": "Vasiliy",
+          "type": "cat"
+        }
+      ]
     },
     {
       "birthday": "2011-12-13",
-      "pet_birthday": "2017-05-12",
-      "pet_name": "Vasiliy",
       "name": "Иванов П.И.",
       "location": "г Москва ул Ленина 10",
-      "type": "cat"
+      "pet": [
+        {
+          "pet_birthday": "2017-05-12",
+          "pet_name": "Vasiliy",
+          "type": "cat"
+        }
+      ]
     },
     {
       "birthday": "1953-06-15",
-      "pet_birthday": "2020-11-05",
-      "pet_name": "Lucky",
       "name": "Петрова Л.И.",
       "location": "г Москва ул Попова 107",
-      "type": "dog"
+      "pet": [
+        {
+          "pet_birthday": "2020-11-05",
+          "pet_name": "Lucky",
+          "type": "dog"
+        }
+      ]
     },
     {
       "birthday": "1953-06-15",
-      "pet_birthday": "2014-01-01",
-      "pet_name": "Burenka",
       "name": "Петрова Л.И.",
       "location": "г Москва ул Попова 107",
-      "type": "caw"
+      "pet": [
+        {
+          "pet_birthday": "2014-01-01",
+          "pet_name": "Burenka",
+          "type": "caw"
+        }
+      ]
     },
     {
       "birthday": "1978-05-09",
-      "pet_birthday": "2020-12-01",
-      "pet_name": "Erebus",
       "name": "Лавров К.С.",
       "location": "г Москва ул Плеханова 53",
-      "type": "snaike"
+      "pet": [
+        {
+          "pet_birthday": "2020-12-01",
+          "pet_name": "Erebus",
+          "type": "snaike"
+        }
+      ]
     }
   ]
 }
