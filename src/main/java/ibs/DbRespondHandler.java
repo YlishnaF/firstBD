@@ -1,3 +1,5 @@
+package ibs;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -6,21 +8,29 @@ import java.io.IOException;
 import java.sql.*;
 
 public class DbRespondHandler {
-    Connection connection;
+
     Statement statement;
     ResultSet resultSet;
     ResultSetMetaData metaData;
-    JSONArray array;
 
-    public DbRespondHandler(String sqlRequest, Connection connection) {
-        this.connection = connection;
-        array = executeSQLRequest(sqlRequest);
+    private DbRespondHandler() {
+//        array = executeSQLRequest(sqlRequest);
     }
 
-    private JSONArray executeSQLRequest(String request) {
+    private static DbRespondHandler INSTANCE;
+
+    public static DbRespondHandler getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new DbRespondHandler();
+        }
+        return INSTANCE;
+    }
+
+    public JSONArray executeSQLRequest(String request) {
+
         JSONArray array = new JSONArray();
         try {
-            statement = connection.createStatement();
+            statement = ConnectionClass.getInstance().getConnectionDB().createStatement();
             resultSet = statement.executeQuery(request);
             metaData = resultSet.getMetaData();
 
@@ -33,6 +43,8 @@ public class DbRespondHandler {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            ConnectionClass.getInstance().close();
         }
         return array;
     }
@@ -53,15 +65,12 @@ public class DbRespondHandler {
         }
     }
 
-    public JSONArray getArray(){
-        return array;
-    }
-
-    public void writeRespondToFile(String fileName) {
-        try(FileWriter fw = new FileWriter(fileName)) {
-            fw.write(array.toJSONString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//
+//    public void writeRespondToFile(String fileName) {
+//        try (FileWriter fw = new FileWriter(fileName)) {
+//            fw.write(array.toJSONString());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
